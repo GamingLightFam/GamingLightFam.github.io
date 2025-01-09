@@ -1,32 +1,30 @@
-// Function to handle maintenance mode logic
-function handleMaintenanceMode() {
+// Function to check if the site is in maintenance mode
+function checkMaintenanceMode() {
+  // Skip checking maintenance mode if we're already on the offline page
+  if (window.location.pathname === '/Offline.html') {
+    return; // Do nothing on the offline page
+  }
+
   // Fetch the maintenance mode setting from the server
   fetch('/Assets/maintenance.json')
     .then(response => response.json())
     .then(data => {
       if (data.maintenanceMode === true) {
-        // Maintenance mode is enabled
-        sessionStorage.setItem('redirectedToOffline', 'true');
-        
-        if (window.location.pathname !== '/Offline.html') {
-          window.location.replace('/Offline.html'); // Redirect to Offline.html
-        }
-      } else {
-        // Maintenance mode is disabled
-        sessionStorage.removeItem('redirectedToOffline'); // Clear session flag
-
-        if (window.location.pathname === '/Offline.html') {
-          window.location.replace('/index.html'); // Redirect to index.html
-        }
+        // Redirect to the offline page
+        window.location.replace('/Offline.html');
+      } else if (data.maintenanceMode === false && window.location.pathname === '/Offline.html') {
+        // Redirect back to index.html if maintenance mode is disabled
+        window.location.replace('/index.html');
       }
     })
     .catch(() => {
-      console.log('Could not fetch maintenance.json, assuming normal mode.');
+      // Handle case where maintenance.json is not available
+      console.log('Could not fetch maintenance.json, assuming not in maintenance mode.');
     });
 }
 
-// URLs to manage during maintenance
-const monitoredUrls = [
+// URLs to redirect during maintenance
+const urlsToRedirect = [
   '/index.html',
   '/Games.html',
   '/Newswire.html',
@@ -41,31 +39,42 @@ const monitoredUrls = [
   '/', // Default root URL
 ];
 
-// Run the maintenance mode handler on page load
-if (monitoredUrls.includes(window.location.pathname)) {
-  handleMaintenanceMode();
+// Check the current URL and redirect if necessary
+if (urlsToRedirect.includes(window.location.pathname)) {
+  fetch('/Assets/maintenance.json')
+    .then(response => response.json())
+    .then(data => {
+      if (data.maintenanceMode === true) {
+        window.location.replace('/Offline.html');
+      }
+    })
+    .catch(() => {
+      console.log('Could not fetch maintenance.json.');
+    });
 }
 
-// Protect the Offline.html page
+// Protect the offline page
 if (window.location.pathname === '/Offline.html') {
-  // Prevent navigating away if in maintenance mode
+  // Prevent navigating away
   window.history.pushState(null, null, window.location.href);
   window.onpopstate = function () {
     window.history.pushState(null, null, window.location.href);
   };
 
-  // Ensure users stay on Offline.html if maintenance mode is true
+  // Ensure the page stays on /Offline.html
   setInterval(() => {
-    fetch('/Assets/maintenance.json')
-      .then(response => response.json())
-      .then(data => {
-        if (!data.maintenanceMode) {
-          // If maintenance mode is disabled, redirect to index.html
-          window.location.replace('/index.html');
-        }
-      })
-      .catch(() => {
-        console.log('Could not fetch maintenance.json.');
-      });
+    if (window.location.pathname !== '/Offline.html') {
+      window.location.replace('/Offline.html');
+    }
   }, 1000);
+}
+
+// Polling mechanism to check maintenance mode every 30 seconds
+setInterval(() => {
+  checkMaintenanceMode();
+}, 30000); // Poll every 30 seconds
+
+// Initial check for maintenance mode
+if (window.location.pathname !== '/Offline.html') {
+  window.onload = checkMaintenanceMode;
 }
