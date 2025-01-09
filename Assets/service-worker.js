@@ -18,8 +18,7 @@ function checkMaintenanceMode() {
       }
     })
     .catch(() => {
-      // Handle case where maintenance.json is not available
-      console.log('Could not fetch maintenance.json, assuming not in maintenance mode.');
+      console.log('Could not fetch maintenance.json.');
     });
 }
 
@@ -70,11 +69,35 @@ if (window.location.pathname === '/Offline.html') {
 }
 
 // Polling mechanism to check maintenance mode every 30 seconds
+let lastMaintenanceStatus = null; // Track the last maintenance status
+
 setInterval(() => {
-  checkMaintenanceMode();
+  fetch('/Assets/maintenance.json')
+    .then(response => response.json())
+    .then(data => {
+      if (data.maintenanceMode !== lastMaintenanceStatus) {
+        lastMaintenanceStatus = data.maintenanceMode; // Update the tracked status
+        location.reload(); // Reload the page to apply changes
+      }
+    })
+    .catch(() => {
+      console.log('Could not fetch maintenance.json.');
+    });
 }, 30000); // Poll every 30 seconds
 
 // Initial check for maintenance mode
 if (window.location.pathname !== '/Offline.html') {
-  window.onload = checkMaintenanceMode;
+  window.onload = () => {
+    fetch('/Assets/maintenance.json')
+      .then(response => response.json())
+      .then(data => {
+        lastMaintenanceStatus = data.maintenanceMode; // Set the initial status
+        if (data.maintenanceMode === true) {
+          window.location.replace('/Offline.html');
+        }
+      })
+      .catch(() => {
+        console.log('Could not fetch maintenance.json.');
+      });
+  };
 }
