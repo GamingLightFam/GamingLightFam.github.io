@@ -5,7 +5,7 @@ function isAdmin() {
   return params.get("admin") === "1";
 }
 
-const allowedPCUsersOffline = ["Erick Denis David"];
+const allowedPCUsersOffline = [""];
 
 function isAllowedPCUserOffline() {
   const params = new URLSearchParams(window.location.search);
