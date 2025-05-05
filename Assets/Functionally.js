@@ -78,7 +78,7 @@ const navbarHTML = `
     <div class="container mx-auto flex items-center justify-between px-4 py-3 md:py-4">
       <a class="flex items-center" href="?page=home" data-page="home" aria-label="GamingLightFam Home">
         <img alt="GamingLightFam Logo, stylized letters GLF in neon purple and blue" class="h-12 w-12" height="48" src="https://static.wixstatic.com/media/66c613_d9d004d838ee40fbbed3521a104129e2~mv2.png" width="48"/>
-        <span class="ml-3 text-indigo-300 font-extrabold text-xl md:text-2xl tracking-wide font-orbitron select-none">GamingLightFam</span>
+        <span class="ml-3 text-indigo-300 font-extrabold text-xl md:text-2xl tracking-wide font-orbitron select-none"></span>
       </a>
       <button aria-expanded="false" aria-label="Toggle menu" class="md:hidden flex flex-col space-y-1.5 focus:outline-none focus:ring-2 focus:ring-indigo-400" id="menu-toggle">
         <span class="block w-7 h-0.5 bg-indigo-300"></span>
