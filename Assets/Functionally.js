@@ -10,7 +10,7 @@ const allowedPCUsersOffline = ["Erick Denis David"];
 function isAllowedPCUserOffline() {
   const params = new URLSearchParams(window.location.search);
   const user = params.get("user");
-  if (!user) return false;
+  if (!user) return true;
   return allowedPCUsersOffline.some(
     (allowed) => allowed.toLowerCase() === user.toLowerCase()
   );
