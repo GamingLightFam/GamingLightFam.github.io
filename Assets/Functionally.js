@@ -5,8 +5,6 @@
       return params.get("admin") === "1";
     }
 
-    // Removed allowedPCUsersOffline and isAllowedPCUserOffline functions
-
     const gamesData = [
       {
         name: "Murder Mystery X",
@@ -141,7 +139,7 @@
 
     function renderPrivacy() {
       return `
-      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-5xl">
+      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-5xl overflow-auto">
         <div class="terms-container">
           <section class="terms-content prose max-w-full">
             <h1>Privacy Policy</h1>
@@ -194,7 +192,7 @@
 
     function renderGames() {
       let html = `
-      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-7xl">
+      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-7xl overflow-auto">
         <h2 class="text-3xl font-bold mb-8 text-left text-indigo-400 font-orbitron select-none">Our Games</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 games">
       `;
@@ -227,7 +225,7 @@
 
     function renderGameDetails(game) {
       if (!game) {
-        return `<main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-5xl text-center text-indigo-300 font-orbitron select-none"><p>Game not found.</p></main>`;
+        return `<main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-5xl text-center text-indigo-300 font-orbitron select-none overflow-auto"><p>Game not found.</p></main>`;
       }
 
       let rolesHTML = game.roles.map((role) => `<li>${role}</li>`).join("");
@@ -245,8 +243,8 @@
       const desc = game.description && game.description.trim() !== "" ? game.description : "No description available";
 
       return `
-      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-5xl">
-        <article class="bg-indigo-800 rounded-lg shadow-lg p-6 flex flex-col gap-8">
+      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-5xl overflow-auto">
+        <article class="bg-indigo-800 rounded-lg shadow-lg p-6 flex flex-col gap-8 min-h-[400px]">
           <div class="flex flex-col md:flex-row gap-6">
             <div class="md:w-1/2 relative flex-shrink-0">
               <img id="main-screenshot" src="${game.screenshots[0]}" alt="Main screenshot of the game ${game.name} showing gameplay or environment" class="rounded-lg w-full object-cover max-h-[400px]" />
@@ -288,7 +286,7 @@
 
     function renderNewswire() {
       return `
-      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-7xl text-indigo-200 font-orbitron">
+      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-7xl text-indigo-200 font-orbitron overflow-auto">
         <h2 class="text-3xl font-bold mb-8 text-left text-indigo-400 select-none">Latest Blog</h2>
         <div id="news-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-full mx-auto">
           <p class="text-center text-indigo-300 col-span-full select-none">Loading news posts...</p>
@@ -299,7 +297,7 @@
 
     function renderFAQ() {
       return `
-      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-3xl">
+      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-3xl overflow-auto">
         <h2 class="text-3xl font-bold mb-8 text-center text-indigo-400 font-orbitron select-none">Frequently Asked Questions</h2>
         <section class="space-y-4">
           <div>
@@ -336,7 +334,7 @@
 
     function renderTerms() {
       return `
-      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-5xl">
+      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-5xl overflow-auto">
         <div class="terms-container prose max-w-full">
           <section class="terms-content">
             <h1>Terms of Use</h1>
@@ -361,7 +359,7 @@
 
     function renderContact() {
       return `
-      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-lg">
+      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-lg overflow-auto">
         <section class="contact-form" aria-label="Contact form">
           <h1 class="text-3xl font-bold mb-6 text-indigo-400 font-orbitron text-center select-none">Contact Us</h1>
           <form id="contactForm" novalidate class="flex flex-col gap-4">
@@ -383,7 +381,7 @@
 
     function renderAbout() {
       return `
-      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-5xl prose prose-indigo">
+      <main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-5xl prose prose-indigo overflow-auto">
         <section class="about-container prose max-w-full">
           <h1 class="select-none">About GamingLightFam</h1>
           <p>GamingLightFam, a leading metaverse game developer and publisher, creates immersive connected experiences that bring gaming communities together with globally recognized brands. The company is shaping the future of pop culture franchises, all born within the metaverse.</p>
