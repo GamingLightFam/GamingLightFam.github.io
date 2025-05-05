@@ -1,4 +1,4 @@
-const siteOnline = true;
+const siteOnline = false;
 
 function isAdmin() {
   const params = new URLSearchParams(window.location.search);
