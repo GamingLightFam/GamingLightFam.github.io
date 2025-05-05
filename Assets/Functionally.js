@@ -5,16 +5,7 @@
       return params.get("admin") === "1";
     }
 
-    const allowedPCUsersOffline = ["Erick Denis David"];
-
-    function isAllowedPCUserOffline() {
-      const params = new URLSearchParams(window.location.search);
-      const user = params.get("user");
-      if (!user) return true;
-      return allowedPCUsersOffline.some(
-        (allowed) => allowed.toLowerCase() === user.toLowerCase()
-      );
-    }
+    // Removed allowedPCUsersOffline and isAllowedPCUserOffline functions
 
     const gamesData = [
       {
@@ -542,7 +533,7 @@
 
     function renderApp() {
       const app = document.getElementById("app");
-      if (!siteOnline && !isAdmin() && !isAllowedPCUserOffline()) {
+      if (!siteOnline && !isAdmin()) {
         app.innerHTML = `<main id="main-content" class="flex-grow container mx-auto px-4 py-8 max-w-5xl"></main>`;
       } else {
         app.innerHTML = `
@@ -557,7 +548,7 @@
       const mainContent = document.getElementById("main-content");
       if (!mainContent) return;
 
-      if (!siteOnline && !isAdmin() && !isAllowedPCUserOffline()) {
+      if (!siteOnline && !isAdmin()) {
         mainContent.innerHTML = renderOfflinePage();
         document.title = "Offline ・ GamingLightFam";
         return;
@@ -733,7 +724,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       renderApp();
       setupMenuToggle();
-      if(siteOnline || isAdmin() || isAllowedPCUserOffline()) {
+      if(siteOnline || isAdmin()) {
         document.getElementById("nav-links").addEventListener("click", handleNavClick);
         document.getElementById("mobile-nav-links").addEventListener("click", handleNavClick);
       }
