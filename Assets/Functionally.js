@@ -54,7 +54,6 @@ const gamesData = [
     ],
     genre: "Action, Roleplay",
     subgenre: "Open World Action",
-    avatar_type: "R6",
     players: "Up to 25 players",
     developer: "GamingLightFam Studios",
     releaseDate: "2022-12-17",
@@ -67,7 +66,32 @@ const gamesData = [
       Developer: "GamingLightFam Studios",
       "Release Date": "2022-12-17",
     },
-    maturity: "Minimal Violence (Mild/Occasional)",
+    maturity: "Violence (Mild/Occasional)",
+  },
+  {
+    name: "FREE ADMIN",
+    image:
+      "https://tr.rbxcdn.com/180DAY-efa0ba1d97691a2df300b0133e756d4e/768/432/Image/Webp/noFilter",
+    description:
+      "Welcome to Free Admin! You have cool Admin Powers which allow you to do awesome Admin Commands. This game does allow powerful admin commands but the biggest rule is to have fun! <br><br> ❓ The Prefix is : <br> 💬 Type :cmds to view all Admin Commands! <br><br> 🔨 [FREE ADMIN] 💥 allows you to: <br> ⭐ Play with Admin Commands! <br> 😎💬 Chat and Play with Others!",
+    screenshots: [
+      "https://tr.rbxcdn.com/180DAY-efa0ba1d97691a2df300b0133e756d4e/768/432/Image/Webp/noFilter",
+    ],
+    genre: "Roleplay & Avatar Sim",
+    subgenre: "Morph Roleplay",
+    players: "Up to 50 players",
+    developer: "GamingLightFam Studios",
+    releaseDate: "2024-04-05",
+    placeId: "17016853613",
+    roles: [""],
+    specifications: {
+      Genre: "Roleplay & Avatar Sim",
+      Subgenre: "Morph Roleplay",
+      Players: "Up to 50 players",
+      Developer: "GamingLightFam Studios",
+      "Release Date": "2024-04-05",
+    },
+    maturity: "Suitable for everyone",
   },
 ];
 
