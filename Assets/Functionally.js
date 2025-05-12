@@ -48,13 +48,8 @@ const gamesData = [
       "https://tr.rbxcdn.com/180DAY-6b238cce37260ba55a59430d2ad095d0/150/150/Image/Webp/noFilter",
     description:
       "PrisonBreak Life is a prison game where you can orchestrate stopping criminals before they get away! Team up with friends for even more fun. What role will you play? <br> <br> Live as a prisoner and escape, or become a guard and defend the prison!",
-    screenshots: [
-      "https://tr.rbxcdn.com/180DAY-bc2d6c2cb59007f9b93587fa1e7a9851/768/432/Image/Webp/noFilter",
-      "https://tr.rbxcdn.com/180DAY-60d14d68fb371ba9c29736e998ac632e/768/432/Image/Png/noFilter",
-    ],
     genre: "Action, Roleplay",
     subgenre: "Open World Action",
-    avatar_type: "R6",
     players: "Up to 25 players",
     developer: "GamingLightFam Studios",
     releaseDate: "2022-12-17",
@@ -68,6 +63,27 @@ const gamesData = [
       "Release Date": "2022-12-17",
     },
     maturity: "Minimal Violence (Mild/Occasional)",
+  },
+    name: "FREE ADMIN",
+    image:
+      "https://tr.rbxcdn.com/180DAY-efa0ba1d97691a2df300b0133e756d4e/768/432/Image/Webp/noFilter",
+    description:
+      "Welcome to Free Admin! You have cool Admin Powers which allow you to do awesome Admin Commands. This game does allow powerful admin commands but the biggest rule is to have fun! <br> <br> ❓ The Prefix is : <be> Type :cmds to view all Admin Commands! <be><be> 🔨 [FREE ADMIN] 💥 allows you to: <be> ⭐ Play with Admin Commands! <be> 😎💬 Chat and Play with Others!
+",
+    genre: "Roleplay & Avatar Sim",
+    subgenre: "Morph Roleplay",
+    players: "Up to 25 players",
+    developer: "GamingLightFam Studios",
+    releaseDate: "2022-12-17",
+    placeId: "17016853613",
+    specifications: {
+      Genre: "Roleplay & Avatar Sim",
+      Subgenre: "Morph Roleplay",
+      Players: "Up to 50 players",
+      Developer: "GamingLightFam Studios",
+      "Release Date": "2024-04-05",
+    },
+    maturity: "Suitable for everyone",
   },
 ];
 
