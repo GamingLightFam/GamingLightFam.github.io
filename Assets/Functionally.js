@@ -23,9 +23,6 @@ const gamesData = [
       "https://tr.rbxcdn.com/180DAY-5f107eed99a7bee5926fa6f650390972/768/432/Image/Webp/noFilter",
     description:
       "Can you solve the mystery and survive each round? <br><br> INNOCENTS: You are the eyes and ears. Run, hide, and use your wits to uncover the Murderer’s identity before it’s too late. Trust no one, everyone could be the killer. <br><br> SHERIFF: You are the protector. Work with the Innocents and use your weapon to eliminate the Murderer. Your aim is their only hope for survival, but you must be careful; you can’t afford to miss. <br><br> MURDERER: You are the danger lurking in the shadows. Your mission is clear: eliminate everyone. Use your stealth and deception to outwit the Innocents and avoid the Sheriff’s watchful eye. Trust no one, and leave no witnesses.",
-    screenshots: [
-      "https://tr.rbxcdn.com/180DAY-5f107eed99a7bee5926fa6f650390972/768/432/Image/Png/noFilter",
-    ],
     genre: "Mystery, Survival",
     subgenre: "1 vs All",
     players: "Up to 12 players",
@@ -274,7 +271,6 @@ function renderGameDetails(game) {
     <article class="bg-indigo-800 rounded-lg shadow-lg p-6 flex flex-col gap-8">
       <div class="flex flex-col md:flex-row gap-6">
         <div class="md:w-1/2 relative flex-shrink-0">
-          <img id="main-screenshot" src="${game.screenshots[0]}" alt="Main screenshot of the game ${game.name} showing gameplay or environment" class="rounded-lg w-full object-cover max-h-[400px]" />
         </div>
         <div class="md:w-1/2 text-indigo-200 flex flex-col justify-between">
           <h2 class="text-4xl font-extrabold mb-1 text-indigo-300 font-orbitron select-text">${game.name}</h2>
