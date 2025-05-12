@@ -23,7 +23,7 @@ const gamesData = [
       "https://tr.rbxcdn.com/180DAY-5f107eed99a7bee5926fa6f650390972/768/432/Image/Webp/noFilter",
     description:
       "Can you solve the mystery and survive each round? <br><br> INNOCENTS: You are the eyes and ears. Run, hide, and use your wits to uncover the Murderer’s identity before it’s too late. Trust no one, everyone could be the killer. <br><br> SHERIFF: You are the protector. Work with the Innocents and use your weapon to eliminate the Murderer. Your aim is their only hope for survival, but you must be careful; you can’t afford to miss. <br><br> MURDERER: You are the danger lurking in the shadows. Your mission is clear: eliminate everyone. Use your stealth and deception to outwit the Innocents and avoid the Sheriff’s watchful eye. Trust no one, and leave no witnesses.",
-     screenshots: [
+    screenshots: [
       "https://tr.rbxcdn.com/180DAY-5f107eed99a7bee5926fa6f650390972/768/432/Image/Png/noFilter",
     ],
     genre: "Mystery, Survival",
@@ -48,12 +48,13 @@ const gamesData = [
       "https://tr.rbxcdn.com/180DAY-6b238cce37260ba55a59430d2ad095d0/150/150/Image/Webp/noFilter",
     description:
       "PrisonBreak Life is a prison game where you can orchestrate stopping criminals before they get away! Team up with friends for even more fun. What role will you play? <br> <br> Live as a prisoner and escape, or become a guard and defend the prison!",
-      screenshots: [
+    screenshots: [
       "https://tr.rbxcdn.com/180DAY-bc2d6c2cb59007f9b93587fa1e7a9851/768/432/Image/Webp/noFilter",
       "https://tr.rbxcdn.com/180DAY-60d14d68fb371ba9c29736e998ac632e/768/432/Image/Png/noFilter",
     ],
     genre: "Action, Roleplay",
     subgenre: "Open World Action",
+    avatar_type: "R6",
     players: "Up to 25 players",
     developer: "GamingLightFam Studios",
     releaseDate: "2022-12-17",
@@ -67,30 +68,6 @@ const gamesData = [
       "Release Date": "2022-12-17",
     },
     maturity: "Minimal Violence (Mild/Occasional)",
-  },
-    name: "FREE ADMIN",
-    image:
-      "https://tr.rbxcdn.com/180DAY-efa0ba1d97691a2df300b0133e756d4e/768/432/Image/Webp/noFilter",
-    description:
-      "Welcome to Free Admin! You have cool Admin Powers which allow you to do awesome Admin Commands. This game does allow powerful admin commands but the biggest rule is to have fun! <br> <br> ❓ The Prefix is : <be> Type :cmds to view all Admin Commands! <be><be> 🔨 [FREE ADMIN] 💥 allows you to: <be> ⭐ Play with Admin Commands! <be> 😎💬 Chat and Play with Others!",
-     screenshots: [
-      "https://tr.rbxcdn.com/180DAY-bc2d6c2cb59007f9b93587fa1e7a9851/768/432/Image/Webp/noFilter",
-      "https://tr.rbxcdn.com/180DAY-60d14d68fb371ba9c29736e998ac632e/768/432/Image/Png/noFilter",
-    ],
-    genre: "Roleplay & Avatar Sim",
-    subgenre: "Morph Roleplay",
-    players: "Up to 25 players",
-    developer: "GamingLightFam Studios",
-    releaseDate: "2022-12-17",
-    placeId: "17016853613",
-    specifications: {
-      Genre: "Roleplay & Avatar Sim",
-      Subgenre: "Morph Roleplay",
-      Players: "Up to 50 players",
-      Developer: "GamingLightFam Studios",
-      "Release Date": "2024-04-05",
-    },
-    maturity: "Suitable for everyone",
   },
 ];
 
@@ -281,7 +258,7 @@ function renderGameDetails(game) {
     <article class="bg-indigo-800 rounded-lg shadow-lg p-6 flex flex-col gap-8">
       <div class="flex flex-col md:flex-row gap-6">
         <div class="md:w-1/2 relative flex-shrink-0">
-            <img id="main-screenshot" src="${game.screenshots[0]}" alt="Main screenshot of the game ${game.name} showing gameplay or environment" class="rounded-lg w-full object-cover max-h-[400px]" />
+          <img id="main-screenshot" src="${game.screenshots[0]}" alt="Main screenshot of the game ${game.name} showing gameplay or environment" class="rounded-lg w-full object-cover max-h-[400px]" />
         </div>
         <div class="md:w-1/2 text-indigo-200 flex flex-col justify-between">
           <h2 class="text-4xl font-extrabold mb-1 text-indigo-300 font-orbitron select-text">${game.name}</h2>
